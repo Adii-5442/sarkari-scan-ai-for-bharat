@@ -100,7 +100,7 @@ export default function HomePageClient() {
       setInitialLoad(false);
       setContentKey((prev) => prev + 1);
     }
-  }, [searchQuery, activeCategory, pagination.page]);
+  }, [searchQuery, pagination.page]);
 
   useEffect(() => {
     fetchJobs();
