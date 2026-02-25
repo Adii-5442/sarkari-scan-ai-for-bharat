@@ -477,6 +477,16 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Ticker scroll for deadline banner */
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* Stagger animation classes */
 .animate-fade-in-up {
   animation: fadeInUp 0.5s ease-out forwards;

@@ -13,6 +13,9 @@ import {
 import JobCard from "@/components/JobCard";
 import SearchBar from "@/components/SearchBar";
 import CategoryGrid from "@/components/CategoryGrid";
+import EligibilityTeaser from "@/components/EligibilityTeaser";
+import DeadlineBanner from "@/components/DeadlineBanner";
+import TrendingSection from "@/components/TrendingSection";
 
 // Loading skeleton
 const JobSkeleton = ({ index = 0 }: { index?: number }) => (
@@ -188,10 +191,10 @@ export default function HomePageClient() {
               const Wrapper = stat.href ? "a" : "div";
               const props = stat.href
                 ? {
-                    href: stat.href,
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                  }
+                  href: stat.href,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                }
                 : {};
               return (
                 <Wrapper
@@ -239,8 +242,17 @@ export default function HomePageClient() {
         </section>
       )}
 
+      {/* AI Eligibility Teaser */}
+      <EligibilityTeaser />
+
       {/* Jobs Section */}
       <section className="py-8 md:py-12 bg-[#F7FAFC]">
+        {/* Deadline Alert Banner */}
+        <DeadlineBanner jobs={jobs} />
+
+        {/* Trending High-Vacancy Jobs */}
+        <TrendingSection jobs={jobs} />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6 animate-fade-in-up">
             <div>
