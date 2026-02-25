@@ -1,0 +1,44 @@
+# Sarkari Scan
+
+> Sarkari Scan is India's trusted portal for latest sarkari naukri (government job) notifications, sarkari result updates, and eligibility checking. The platform covers all central and state government job vacancies including UPSC, SSC, Railway, Bank, Defence, Teaching, Police, and PSU jobs. Available as a website at sarkariscan.com and as a free Android app on Google Play Store.
+
+Sarkari Scan helps Indian job seekers find government jobs (sarkari naukri) that match their eligibility. Key features include:
+
+- Real-time government job notifications updated daily
+- Eligibility checking based on age, education qualification, and category
+- Job deadline tracking with countdown alerts
+- Free push notifications for new job postings via Android app
+- Coverage of all major recruiting bodies: UPSC, SSC, RRB, IBPS, State PSCs, Defence, Police, Teaching boards
+
+## Main Pages
+
+- [Home – Latest Sarkari Naukri](https://sarkariscan.com/): Browse all latest government job notifications with search and category filters
+- [Sarkari Naukri 2026](https://sarkariscan.com/sarkari-naukri): Comprehensive listing of all sarkari naukri notifications for 2026
+- [Government Jobs](https://sarkariscan.com/government-jobs): All central and state government job vacancies and notifications
+- [10th Pass Govt Jobs](https://sarkariscan.com/10th-pass-govt-jobs): Government jobs for candidates with 10th class qualification
+- [12th Pass Govt Jobs](https://sarkariscan.com/12th-pass-govt-jobs): Government jobs for candidates with 12th class / intermediate qualification
+- [Railway Jobs](https://sarkariscan.com/railway-jobs): All Railway Recruitment Board (RRB) job notifications
+- [Bank Jobs](https://sarkariscan.com/bank-jobs): Banking sector jobs from SBI, IBPS, RBI, and other banks
+- [SSC Jobs](https://sarkariscan.com/ssc-jobs): Staff Selection Commission recruitment notifications
+- [Defence Jobs](https://sarkariscan.com/defence-jobs): Indian Army, Navy, Air Force, and paramilitary force jobs
+
+## Job Categories
+
+- UPSC Jobs: Civil Services (IAS/IPS), Engineering Services, CDS, NDA, CAPF
+- SSC Jobs: CGL, CHSL, MTS, GD Constable, Stenographer, JE, CPO
+- Railway Jobs: RRB NTPC, Group D, ALP, JE, RPF, Section Controller
+- Bank Jobs: SBI PO/Clerk, IBPS PO/Clerk/SO, RBI Grade B, NABARD
+- Defence Jobs: Indian Army, Navy, Air Force, Coast Guard, BSF, CRPF, CISF
+- Teaching Jobs: CTET, State TET, KVS, NVS, EMRS, DSSSB
+- Medical Jobs: AIIMS, ESIC, NHM, state health department vacancies
+- State Government Jobs: All 28 states and 8 UTs – UPPSC, BPSC, MPSC, RPSC, WBPSC
+
+## About
+
+- [Privacy Policy](https://sarkariscan.com/privacy-policy): Privacy policy for Sarkari Scan website and app
+- [Download Android App](https://play.google.com/store/apps/details?id=com.sarkariscan): Free app with eligibility checking and push notifications
+
+## Optional
+
+- [Sitemap](https://sarkariscan.com/sitemap.xml): XML sitemap with all job pages
+- [Robots](https://sarkariscan.com/robots.txt): Crawling instructions

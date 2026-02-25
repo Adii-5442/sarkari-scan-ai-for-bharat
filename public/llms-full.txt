@@ -1,0 +1,59 @@
+# Sarkari Scan – India's Trusted Government Jobs Portal
+
+> Sarkari Scan (sarkariscan.com) is a modern, free platform for discovering the latest sarkari naukri (government job) notifications across India. It provides real-time updates on government job vacancies, eligibility checking, deadline tracking, and free job alerts. Available as a website and Android app.
+
+## What is Sarkari Scan?
+
+Sarkari Scan is India's trusted portal for latest sarkari naukri (सरकारी नौकरी) notifications. The platform aggregates government job vacancies from all major central and state government recruiting bodies and presents them in a clean, modern interface. Unlike traditional government job websites, Sarkari Scan offers an ad-free experience with a unique eligibility-checking feature that tells users which jobs they qualify for based on their age, education, and category.
+
+## Key Features
+
+1. **Real-time Job Notifications**: Government job vacancies are updated daily from official sources including UPSC, SSC, Railway Recruitment Board, IBPS, State PSCs, Defence recruitment boards, and more.
+
+2. **Eligibility Checker**: Users can enter their age, educational qualification, and category (General/OBC/SC/ST) to instantly see all government jobs they are eligible to apply for. This unique feature saves hours of manual checking across multiple websites.
+
+3. **Deadline Tracking**: Each job listing shows a countdown to the application deadline, with color-coded urgency indicators (red for urgent, amber for approaching, green for plenty of time remaining).
+
+4. **Free Job Alerts**: The Android app provides push notifications for new job postings matching user preferences, ensuring they never miss a deadline.
+
+5. **Comprehensive Coverage**: The platform covers all types of sarkari naukri:
+   - UPSC Jobs: Civil Services (IAS/IPS/IFS), Engineering Services (ESE), CDS, NDA, CAPF, Indian Forest Service
+   - SSC Jobs: CGL, CHSL, MTS, GD Constable, Stenographer, JE, CPO, Selection Posts
+   - Railway Jobs: RRB NTPC, Group D, ALP, JE, RPF, Section Controller
+   - Bank Jobs: SBI PO/Clerk, IBPS PO/Clerk/SO, RBI Grade B/Assistant, NABARD, SIDBI
+   - Defence Jobs: Indian Army, Navy, Air Force, Coast Guard, BSF, CRPF, CISF, ITBP, SSB
+   - Teaching Jobs: CTET, State TET, KVS, NVS, EMRS, DSSSB, University positions
+   - Medical Jobs: AIIMS, ESIC, NHM, state health department vacancies
+   - State Government Jobs: All 28 states and 8 UTs – UPPSC, BPSC, MPSC, RPSC, WBPSC, TNPSC, KPSC, APPSC, TSPSC
+   - PSU Jobs: NTPC, IOCL, BHEL, ONGC, SAIL, GAIL, Coal India, HAL, BEL
+
+## Website Structure
+
+- **Homepage** (sarkariscan.com): Browse all latest government job notifications with search and category filters, job cards showing key details (vacancy count, deadline, qualification requirements)
+- **Job Detail Pages** (sarkariscan.com/jobs/[slug]): Detailed job information including eligibility criteria, age limits, application fees, important dates, selection process, and direct apply links
+- **Sarkari Naukri** (sarkariscan.com/sarkari-naukri): SEO landing page for Hindi-language searches
+- **Government Jobs** (sarkariscan.com/government-jobs): SEO landing page for English-language searches
+- **Category Landing Pages**: Dedicated pages for Railway Jobs, Bank Jobs, SSC Jobs, Defence Jobs, 10th Pass Govt Jobs, 12th Pass Govt Jobs
+
+## Frequently Asked Questions
+
+**Q: What is Sarkari Scan?**
+A: Sarkari Scan is India's trusted portal for latest sarkari naukri (government job) notifications. It provides real-time updates on government job vacancies from UPSC, SSC, Railway, Banking, Defence, Teaching, and all other central and state government departments.
+
+**Q: How to check eligibility for sarkari naukri?**
+A: Download the Sarkari Scan app from Google Play Store. Enter your age, education qualification, and category. The app will instantly show you all government jobs you are eligible to apply for.
+
+**Q: Is Sarkari Scan free to use?**
+A: Yes, Sarkari Scan is completely free. Both the website and Android app provide free access to all government job notifications, eligibility checking, deadline tracking, and job alerts.
+
+**Q: What types of government jobs does Sarkari Scan cover?**
+A: Sarkari Scan covers all types of sarkari naukri including UPSC, SSC, Railway, Banking, Defence, Police, Teaching, Medical, PSU, and state government jobs across all 28 states and 8 Union Territories.
+
+**Q: How to get latest sarkari naukri notifications?**
+A: Visit sarkariscan.com for daily-updated government job notifications. For instant alerts, download the Sarkari Scan Android app to receive push notifications whenever a new government job vacancy is posted.
+
+## Contact and Links
+
+- Website: https://sarkariscan.com
+- Android App: https://play.google.com/store/apps/details?id=com.sarkariscan
+- Privacy Policy: https://sarkariscan.com/privacy-policy
