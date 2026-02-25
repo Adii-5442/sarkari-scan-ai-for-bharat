@@ -203,11 +203,16 @@ export default function HomePageClient() {
 
       {/* Browse by Category */}
       {categories.length > 0 && (
-        <section className="py-6 bg-white border-b border-gray-100">
+        <section className="py-8 bg-white border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-base font-semibold text-gray-700 mb-3">
-              Browse by Category
-            </h2>
+            <div className="flex items-center justify-between mb-5">
+              <div>
+                <h2 className="text-lg font-bold text-gray-900">Browse by Category</h2>
+                <p className="text-xs text-gray-400 mt-0.5">
+                  {categories.reduce((sum, c) => sum + c.count, 0).toLocaleString()} jobs across {categories.length} categories
+                </p>
+              </div>
+            </div>
             <CategoryGrid
               categories={categories}
               selectedCategory={activeCategory}
