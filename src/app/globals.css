@@ -1,26 +1,604 @@
 @import "tailwindcss";
 
+/* ============ SARKARI SCAN DESIGN SYSTEM ============ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand Colors - Primary #0B63A8 matching Android app */
+  --primary: #0B63A8;
+  --primary-dark: #084B80;
+  --primary-darker: #063560;
+  --primary-glass: rgba(11, 99, 168, 0.95);
+  
+  /* Accent for premium/CTA highlights */
+  --accent-gold: #FFD700;
+  --accent-gold-light: rgba(255, 215, 0, 0.15);
+  
+  /* Highlight for emphasis */
+  --highlight: #3B9FDD;
+  --highlight-light: #60B8F0;
+
+  /* Light Mode */
+  --background: #F7FAFC;
+  --surface: #FFFFFF;
+  --text-primary: #1A202C;
+  --text-muted: #6B7280;
+
+  /* Status Colors */
+  --success: #10B981;
+  --success-bg: #ECFDF5;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+  --info: #3B82F6;
+
+  /* Deadline Colors */
+  --urgent-red: #DC2626;
+  --urgent-bg: #FEF2F2;
+  --active-green: #10B981;
+  --active-bg: #ECFDF5;
+  --new-blue: #3B82F6;
+  --new-bg: #EFF6FF;
+
+  /* Neutral Grays */
+  --gray-50: #F9FAFB;
+  --gray-100: #F3F4F6;
+  --gray-200: #E5E7EB;
+  --gray-300: #D1D5DB;
+  --gray-400: #9CA3AF;
+  --gray-500: #6B7280;
+  --gray-600: #4B5563;
+  --gray-700: #374151;
+  --gray-800: #1F2937;
+  --gray-900: #111827;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-primary: 0 4px 20px rgba(11, 99, 168, 0.25);
+
+  --foreground: var(--text-primary);
 }
 
+/* Tailwind Theme Extension */
 @theme inline {
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-highlight: var(--highlight);
+  --color-highlight-light: var(--highlight-light);
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: var(--surface);
+  --color-text-primary: var(--text-primary);
+  --color-text-muted: var(--text-muted);
+  --color-success: var(--success);
+  --color-success-bg: var(--success-bg);
+  --color-danger: var(--danger);
+  --color-urgent-red: var(--urgent-red);
+  --color-urgent-bg: var(--urgent-bg);
+  --color-active-green: var(--active-green);
+  --color-active-bg: var(--active-bg);
+  --color-new-blue: var(--new-blue);
+  --color-new-bg: var(--new-bg);
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-heading: "Poppins", system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base Styles */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Custom Utilities */
+.card {
+  background: var(--surface);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--gray-200);
+}
+
+/* Primary Button */
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Hero Section - Glassy gradient matching Android app */
+.hero-glass {
+  background: linear-gradient(135deg, 
+    #0B63A8 0%, 
+    #084B80 50%,
+    #063560 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative glass circles - matching Android app */
+.hero-glass::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.hero-glass::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 250px;
+  height: 250px;
+  border-radius: 125px;
+  background: rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+}
+
+/* Glass Button - Frosted glass effect */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+/* White CTA Button on dark backgrounds */
+.btn-white {
+  background: white;
+  color: var(--primary);
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 14px;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-white:hover {
+  background: var(--gray-50);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Outline Button */
+.btn-outline {
+  background: transparent;
+  color: white;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Deadline Pills */
+.deadline-urgent {
+  background: var(--urgent-bg);
+  color: var(--urgent-red);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+}
+
+.deadline-active {
+  background: var(--active-bg);
+  color: var(--active-green);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.deadline-new {
+  background: var(--new-bg);
+  color: var(--new-blue);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Chip/Tag styles */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--gray-100);
+  color: var(--gray-600);
+  border: 1px solid var(--gray-200);
+}
+
+/* App Download Banner - Dark glass gradient */
+.download-banner {
+  background: linear-gradient(135deg, #0B63A8 0%, #084B80 50%, #063560 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.download-banner::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.download-banner::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+}
+
+/* Feature Cards - Clean with hover lift */
+.feature-card {
+  background: white;
+  border-radius: 20px;
+  padding: 32px 24px;
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Stats Display - Glass effect */
+.stat-item {
+  text-align: center;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-400);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-500);
+}
+
+/* Custom scrollbar for sidebar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-400);
+}
+
+/* Section Headers */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.section-title-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0B63A8 0%, #084B80 100%);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(11, 99, 168, 0.25);
+}
+
+/* Icon circle for features - glass style */
+.icon-circle-glass {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Premium badge styling */
+.premium-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 215, 0, 0.15);
+  padding: 4px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  color: #FFD700;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ============ ANIMATIONS & TRANSITIONS ============ */
+
+/* Fade-in-up entrance animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade-in scale animation */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Shimmer effect for skeleton loaders */
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+/* Subtle pulse glow */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(11, 99, 168, 0);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(11, 99, 168, 0.08);
+  }
+}
+
+/* Content flash animation - indicates new content */
+@keyframes contentFlash {
+  0% {
+    background-color: rgba(11, 99, 168, 0.08);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+/* Float animation for hero decorative elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Stagger animation classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+/* Shimmer skeleton loader */
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 37%, #f0f0f0 63%);
+  background-size: 800px 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+/* Content change flash */
+.content-flash {
+  animation: contentFlash 0.8s ease-out;
+}
+
+/* Smooth page transition wrapper */
+.page-transition {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+/* Card hover lift effect - enhanced */
+.card-hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.12), 0 4px 8px -4px rgba(0, 0, 0, 0.06);
+}
+
+/* Stagger delay utility classes */
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.1s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.2s; }
+.stagger-5 { animation-delay: 0.25s; }
+.stagger-6 { animation-delay: 0.3s; }
+.stagger-7 { animation-delay: 0.35s; }
+.stagger-8 { animation-delay: 0.4s; }
+.stagger-9 { animation-delay: 0.45s; }
+
+/* Loading overlay for content transitions */
+.content-loading-overlay {
+  position: relative;
+}
+
+.content-loading-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(247, 250, 252, 0.7);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  border-radius: 16px;
+  z-index: 10;
+}
+
+.content-loading-overlay.is-loading::after {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Hero floating elements */
+.hero-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-float-delayed {
+  animation: float 8s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+/* Smooth scrollbar for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-fade-in-scale,
+  .animate-slide-in-right,
+  .animate-slide-in-left {
+    animation: none;
+    opacity: 1;
+  }
+  
+  .skeleton-shimmer {
+    animation: none;
+  }
+  
+  .card-hover-lift:hover {
+    transform: none;
+  }
+  
+  .hero-float,
+  .hero-float-delayed {
+    animation: none;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
 }
