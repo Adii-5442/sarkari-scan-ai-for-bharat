@@ -487,6 +487,22 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Slide up for mobile app banner */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out forwards;
+}
+
 /* Stagger animation classes */
 .animate-fade-in-up {
   animation: fadeInUp 0.5s ease-out forwards;
