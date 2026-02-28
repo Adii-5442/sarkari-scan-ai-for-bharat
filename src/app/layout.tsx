@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MobileAppBanner from "@/components/MobileAppBanner";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -170,6 +171,7 @@ export default function RootLayout({
       >
         <Header />
         <main className="flex-1">{children}</main>
+        <MobileAppBanner />
         <Footer />
       </body>
     </html>

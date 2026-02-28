@@ -13,6 +13,9 @@ import {
 import JobCard from "@/components/JobCard";
 import SearchBar from "@/components/SearchBar";
 import CategoryGrid from "@/components/CategoryGrid";
+import EligibilityTeaser from "@/components/EligibilityTeaser";
+import DeadlineBanner from "@/components/DeadlineBanner";
+import TrendingSection from "@/components/TrendingSection";
 
 // Loading skeleton
 const JobSkeleton = ({ index = 0 }: { index?: number }) => (
@@ -137,23 +140,31 @@ export default function HomePageClient() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="hero-glass py-8 md:py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1
-            className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 leading-tight animate-fade-in-up"
-            style={{ color: "#FFFFFF" }}
-          >
+      <section className="hero-glass py-10 md:py-14 relative overflow-hidden">
+        {/* Animated decorative orbs */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute -top-16 -right-16 w-72 h-72 rounded-full opacity-10" style={{ background: "radial-gradient(circle, #FFD700, transparent 70%)", animation: "float 8s ease-in-out infinite" }} />
+          <div className="absolute -bottom-20 -left-20 w-96 h-96 rounded-full opacity-8" style={{ background: "radial-gradient(circle, #60B8F0, transparent 70%)", animation: "float 12s ease-in-out infinite", animationDelay: "-4s" }} />
+          <div className="absolute top-1/2 right-1/4 w-40 h-40 rounded-full opacity-5" style={{ background: "radial-gradient(circle, #10B981, transparent 70%)", animation: "float 10s ease-in-out infinite", animationDelay: "-2s" }} />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold mb-5 animate-fade-in-up"
+            style={{ background: "rgba(255,215,0,0.18)", border: "1px solid rgba(255,215,0,0.4)", color: "#FFD700" }}>
+            🇮🇳 India&apos;s AI-Powered Govt Job Platform
+          </div>
+
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-3 leading-tight animate-fade-in-up" style={{ color: "#FFFFFF", textShadow: "0 2px 20px rgba(0,0,0,0.2)" }}>
             Find Your Dream{" "}
-            <span style={{ color: "#FFD700" }}>Sarkari Naukri</span>
+            <span style={{ color: "#FFD700", textShadow: "0 0 30px rgba(255,215,0,0.4)" }}>Sarkari Naukri</span>
           </h1>
-          <p
-            className="text-sm md:text-base max-w-xl mx-auto mb-6 animate-fade-in-up"
-            style={{ color: "rgba(255, 255, 255, 0.9)" }}
-          >
-            Search across 1000+ active government job notifications
+
+          <p className="text-sm md:text-base max-w-lg mx-auto mb-7 animate-fade-in-up" style={{ color: "rgba(255,255,255,0.85)", lineHeight: 1.6 }}>
+            Search across <strong style={{ color: "#FFD700" }}>1000+ active</strong> government job notifications. AI-powered eligibility matching in our free app.
           </p>
 
-          <div className="w-full px-4 md:px-16 lg:px-32 animate-fade-in-up">
+          <div className="w-full px-2 md:px-12 lg:px-28 animate-fade-in-up mb-7">
             <SearchBar
               initialQuery={searchQuery}
               onSearch={handleSearch}
@@ -162,60 +173,26 @@ export default function HomePageClient() {
           </div>
 
           {/* Stats row */}
-          <div className="flex flex-wrap justify-center gap-3 mt-6">
+          <div className="flex flex-wrap justify-center gap-3 animate-fade-in-up">
             {[
-              {
-                label: "Active Jobs",
-                value:
-                  pagination.totalJobs > 0
-                    ? pagination.totalJobs.toLocaleString()
-                    : "1000+",
-                color: "#F59E0B",
-              },
-              {
-                label: "Check Eligibility",
-                value: "Get App →",
-                color: "#10B981",
-                href: PLAY_STORE_URL,
-              },
-              {
-                label: "Free Alerts",
-                value: "Never miss",
-                color: "#3B82F6",
-                href: PLAY_STORE_URL,
-              },
+              { label: "Active Jobs", value: pagination.totalJobs > 0 ? pagination.totalJobs.toLocaleString() : "1,200+", color: "#F59E0B", icon: "📋" },
+              { label: "Check Eligibility", value: "Download App", color: "#10B981", href: PLAY_STORE_URL, icon: "🎯" },
+              { label: "Free Alerts", value: "Never Miss", color: "#60B8F0", href: PLAY_STORE_URL, icon: "🔔" },
+              { label: "Categories", value: "10+ Sectors", color: "#C084FC", icon: "🗂️" },
             ].map((stat) => {
               const Wrapper = stat.href ? "a" : "div";
-              const props = stat.href
-                ? {
-                    href: stat.href,
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                  }
-                : {};
+              const props = stat.href ? { href: stat.href, target: "_blank", rel: "noopener noreferrer" } : {};
               return (
                 <Wrapper
                   key={stat.label}
                   {...props}
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl transition-all hover:scale-105"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%)",
-                    border: "1px solid rgba(255,255,255,0.2)",
-                  }}
+                  className="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl transition-all hover:scale-105 cursor-pointer"
+                  style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.08) 100%)", border: "1px solid rgba(255,255,255,0.22)", backdropFilter: "blur(8px)" }}
                 >
-                  <div
-                    className="w-2 h-2 rounded-full"
-                    style={{ backgroundColor: stat.color }}
-                  />
+                  <span className="text-lg">{stat.icon}</span>
                   <div className="text-left">
-                    <p className="text-sm font-bold text-white">{stat.value}</p>
-                    <p
-                      className="text-xs"
-                      style={{ color: "rgba(255,255,255,0.8)" }}
-                    >
-                      {stat.label}
-                    </p>
+                    <p className="text-sm font-black text-white leading-none">{stat.value}</p>
+                    <p className="text-[11px] mt-0.5" style={{ color: "rgba(255,255,255,0.75)" }}>{stat.label}</p>
                   </div>
                 </Wrapper>
               );
@@ -226,11 +203,16 @@ export default function HomePageClient() {
 
       {/* Browse by Category */}
       {categories.length > 0 && (
-        <section className="py-6 bg-white border-b border-gray-100">
+        <section className="py-8 bg-white border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-base font-semibold text-gray-700 mb-3">
-              Browse by Category
-            </h2>
+            <div className="flex items-center justify-between mb-5">
+              <div>
+                <h2 className="text-lg font-bold text-gray-900">Browse by Category</h2>
+                <p className="text-xs text-gray-400 mt-0.5">
+                  {categories.reduce((sum, c) => sum + c.count, 0).toLocaleString()} jobs across {categories.length} categories
+                </p>
+              </div>
+            </div>
             <CategoryGrid
               categories={categories}
               selectedCategory={activeCategory}
@@ -239,8 +221,17 @@ export default function HomePageClient() {
         </section>
       )}
 
+      {/* AI Eligibility Teaser */}
+      <EligibilityTeaser />
+
       {/* Jobs Section */}
       <section className="py-8 md:py-12 bg-[#F7FAFC]">
+        {/* Deadline Alert Banner */}
+        <DeadlineBanner jobs={jobs} />
+
+        {/* Trending High-Vacancy Jobs */}
+        <TrendingSection jobs={jobs} />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6 animate-fade-in-up">
             <div>
