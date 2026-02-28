@@ -170,7 +170,7 @@ export default function RootLayout({
         className={`${inter.variable} ${poppins.variable} antialiased min-h-screen flex flex-col`}
       >
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1">{children}</main>
         <MobileAppBanner />
         <Footer />
       </body>
