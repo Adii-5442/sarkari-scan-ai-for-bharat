@@ -28,7 +28,7 @@ export default function EligibilityTeaser() {
                         </div>
                         <h2 className="text-2xl md:text-3xl font-bold mb-3 leading-tight">
                             Know Which Govt Jobs<br />
-                            <span style={{ color: "#FFD700" }}>You're Eligible For</span>
+                            <span style={{ color: "#FFD700" }}>You&apos;re Eligible For</span>
                         </h2>
                         <p className="text-sm md:text-base mb-5" style={{ color: "rgba(255,255,255,0.85)" }}>
                             Our AI checks your age, qualification, and category against every live job — in seconds. Download the free app to get started.

@@ -95,6 +95,8 @@ export default function Footer() {
                 },
                 { href: "/government-jobs", label: "Government Jobs" },
                 { href: PLAY_STORE_URL, label: "Download App", external: true },
+                { href: "/about-us", label: "About Us" },
+                { href: "/contact-us", label: "Contact Us" },
                 { href: "/privacy-policy", label: "Privacy Policy" },
               ].map((link) => (
                 <li key={link.href}>
