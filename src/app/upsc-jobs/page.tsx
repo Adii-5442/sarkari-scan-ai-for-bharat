@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { getJobs, PLAY_STORE_URL, JobListItem } from "@/lib/api";
 import JobCard from "@/components/JobCard";
+import { generateBreadcrumbJsonLd } from "@/lib/structured-data";
 
 const currentYear = new Date().getFullYear();
 
@@ -28,6 +29,15 @@ export default async function CategoryPage() {
 
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateBreadcrumbJsonLd([
+            { name: "Home", href: "/" },
+            { name: `UPSC Jobs ${currentYear}`, href: "/upsc-jobs" },
+          ]),
+        }}
+      />
       <section className="hero-glass py-8 md:py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 animate-fade-in-up" style={{ color: "#FFFFFF" }}>
